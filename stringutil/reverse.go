@@ -1,6 +1,8 @@
 package stringutil
 
-import "strings"
+import (
+	"strings"
+)
 
 // Reverse returns it's argument string reversed.
 // This is my implementation.
@@ -10,7 +12,7 @@ func Reverse(s string) string {
 		ret = append(ret, string(s[i]))
 	}
 
-	return strings.Join(ret, "")
+	return strings.Join(ret, "") // Used strings :(
 }
 
 // ReverseNew returns it's argument string reversed
