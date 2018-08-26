@@ -2,22 +2,22 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/vn-ki/go-exp/stringutil"
 )
 
+type Named interface {
+	name() string
+}
+type Person struct {
+	nm string
+}
+
+func (p Person) name() string {
+	return p.nm
+}
+
 func main() {
-	fmt.Println("go go gophers...")
-
-	// stringutil.ReverseNew, stringutil.Reverse
-	//
-	// fmt.Println(stringutil.ReverseNew("abcde"))
-	// fmt.Println(stringutil.Reverse("abcde"))
-
-	// stringutil.Capitalize
-	// a := stringutil.Capitalize("sdfasdSSD2948::;lv")
-	// fmt.Println(string(a))
-
-	fmt.Println(stringutil.CapRev("asd"))
-
+	p := Person{nm: "Him"}
+	named := Named(p)
+	//named = p
+	fmt.Println(named.name())
 }

@@ -58,7 +58,7 @@ func TestWallet_AddMoney(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			w := &Wallet{
-				money:    tt.fields.money,
+				Money:    tt.fields.money,
 				MaxMoney: tt.fields.MaxMoney,
 			}
 			if err := w.AddMoney(tt.args.money); (err != nil) != tt.wantErr {
@@ -101,7 +101,7 @@ func TestWallet_TakeMoney(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			w := &Wallet{
-				money:    tt.fields.money,
+				Money:    tt.fields.money,
 				MaxMoney: tt.fields.MaxMoney,
 			}
 			if err := w.TakeMoney(tt.args.money); (err != nil) != tt.wantErr {
